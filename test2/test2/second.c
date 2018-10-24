@@ -103,7 +103,7 @@ void Computer(){
 
 //检查函数，检测游戏是否结束，判断谁是赢家，如果返回x表示玩家胜利，
 //如果返回o表示电脑胜利，返回q表示和棋，
-//如果返回空格表示胜负未分
+//如果返回空格表示胜负未分,未下完
 int Check(){
 	int row=0;
 	int col=0;
@@ -153,26 +153,26 @@ int main(){
 	char winner=' ';
 	//对棋盘进行初始化  
 	Init();
- while(1 ){
+    while(1){
 	  //打印棋盘
-	 Printchess(g_chess_board);
+		 Printchess(g_chess_board);
 
-	  //玩家落子
-	   Player();
-	  
-	  winner=Check(); 
-	  if(winner!=' '){ 
-		  //游戏结束
-		  break;
-	  
-	  }
-	  //电脑落子
-     Computer();
+		  //玩家落子
+		   Player();
+		  
+		  winner=Check(); 
+		  if(winner!=' '){ 
+			  //游戏结束
+			  break;
+		  
+		  }
+		  //电脑落子
+		 Computer();
 
-	  winner=Check(); 
-	  if(winner!=' '){
-		  //游戏结束
-		  break;
+		  winner=Check(); 
+		  if(winner!=' '){
+			  //游戏结束
+			  break;
 	  
 	  }
    }
